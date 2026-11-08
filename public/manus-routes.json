@@ -1,0 +1,21 @@
+{
+  "routes": [
+    { "path": "/", "title": "Home" },
+    { "path": "/about", "title": "About Us" },
+    { "path": "/services", "title": "Services" },
+    { "path": "/services/web-development", "title": "Web Development" },
+    {
+      "path": "/services/graphic-design-branding",
+      "title": "Graphic Design & Branding"
+    },
+    { "path": "/services/video-editing", "title": "Video Editing" },
+    { "path": "/services/digital-solutions", "title": "Digital Solutions" },
+    { "path": "/portfolio", "title": "Portfolio" },
+    { "path": "/pricing", "title": "Pricing" },
+    { "path": "/how-it-works", "title": "How It Works" },
+    { "path": "/faq", "title": "FAQ" },
+    { "path": "/contact", "title": "Contact Us" },
+    { "path": "/privacy-policy", "title": "Privacy Policy" },
+    { "path": "/terms-conditions", "title": "Terms & Conditions" }
+  ]
+}
