@@ -750,19 +750,20 @@ function ContactPage() {
               <div>
                 <MessageCircle size={19} />
                 <span>
-                  <small>WhatsApp</small>[ADD WHATSAPP NUMBER]
+                  <small>WhatsApp</small> 01580359517
                 </span>
               </div>
               <div>
                 <FileText size={19} />
                 <span>
-                  <small>Email</small>[ADD BUSINESS EMAIL]
+                  <small>Email</small> IftekherMahmud1@gmail.com
                 </span>
               </div>
               <div>
                 <Users size={19} />
                 <span>
-                  <small>Social</small>[ADD FACEBOOK URL] · [ADD INSTAGRAM URL]
+                  <small>Social</small> https://facebook.com/creativeitstudio1
+
                 </span>
               </div>
             </div>

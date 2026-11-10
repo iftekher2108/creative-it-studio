@@ -221,65 +221,16 @@ export function TestimonialSlider() {
 }
 
 export function ContactForm() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    budget: "",
-    details: "",
-  });
-  const [status, setStatus] = useState({ type: "idle", message: "" });
-  const update = (event) =>
-    setForm({ ...form, [event.target.name]: event.target.value });
-  const submit = async (event) => {
-    event.preventDefault();
-    setStatus({ type: "idle", message: "" });
-    if (
-      !form.name.trim() ||
-      !/^\S+@\S+\.\S+$/.test(form.email) ||
-      !form.service ||
-      form.details.trim().length < 20
-    ) {
-      setStatus({
-        type: "error",
-        message:
-          "Please add your name, a valid email, choose a service, and share at least 20 characters about the project.",
-      });
-      return;
-    }
-    setStatus({ type: "loading", message: "Checking the project handoff…" });
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      const data = await response.json();
-      if (!response.ok)
-        throw new Error(data.message || "This form is not connected yet.");
-      setStatus({ type: "success", message: data.message });
-      setForm({
-        name: "",
-        email: "",
-        phone: "",
-        service: "",
-        budget: "",
-        details: "",
-      });
-    } catch (error) {
-      setStatus({ type: "error", message: error.message });
-    }
-  };
+
   return (
-    <form className="contact-form" onSubmit={submit} noValidate>
+    <form className="contact-form" >
       <div className="form-grid">
         <label>
           Full Name
           <input
             name="name"
-            value={form.name}
-            onChange={update}
+            value=''
+            
             placeholder="Your name"
           />
         </label>
@@ -288,8 +239,8 @@ export function ContactForm() {
           <input
             name="email"
             type="email"
-            value={form.email}
-            onChange={update}
+            value=''
+           
             placeholder="you@company.com"
           />
         </label>
@@ -297,22 +248,22 @@ export function ContactForm() {
           Phone Number
           <input
             name="phone"
-            value={form.phone}
-            onChange={update}
+            value=''
+           
             placeholder="Optional"
           />
         </label>
         <label>
           Select Service
-          <select name="service" value={form.service} onChange={update}>
+          <select name="service" value=''>
             <option value="">Choose one</option>
             <option>Web Design & Development</option>
-            <option>Graphic Design & Branding</option>
+            {/* <option>Graphic Design & Branding</option> */}
             <option>Video Editing</option>
             <option>Digital Solutions</option>
           </select>
         </label>
-        <label className="full-field">
+        {/* <label className="full-field">
           Budget Range
           <select name="budget" value={form.budget} onChange={update}>
             <option value="">Choose a range (optional)</option>
@@ -321,19 +272,19 @@ export function ContactForm() {
             <option>Growth scope</option>
             <option>Custom solution</option>
           </select>
-        </label>
+        </label> */}
         <label className="full-field">
           Project Details
           <textarea
             name="details"
-            value={form.details}
-            onChange={update}
+            value=''
+  
             placeholder="What are you trying to create, improve, or communicate?"
             rows="6"
           />
         </label>
       </div>
-      {status.type !== "idle" && (
+      {/* {status.type !== "idle" && (
         <div className={`form-status ${status.type}`}>
           {status.type === "success"
             ? <CheckCircle2 size={18} />
@@ -342,14 +293,15 @@ export function ContactForm() {
               : <span className="status-dot" />}
           {status.message}
         </div>
-      )}
+      )} */}
       <button
         className="button button-primary submit-button"
         type="submit"
-        disabled={status.type === "loading"}
+        // disabled={status.type === "loading"}
       >
-        {status.type === "loading" ? "Sending…" : "Send Project Enquiry"}
-        <Send size={17} />
+      Send Project Enquiry
+        {/* {status.type === "loading" ? "Sending…" : "Send Project Enquiry"}
+        <Send size={17} /> */}
       </button>
       <p className="form-note">
         This demo is validation-ready. Connect the API route to your email, CRM,

@@ -14,6 +14,7 @@ import {
   Workflow,
   X,
 } from "lucide-react";
+import Image from 'next/image'
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -36,13 +37,14 @@ export function Icon({ name, size = 22, strokeWidth = 1.7, ...props }) {
 export function Logo({ compact = false }) {
   return (
     <Link href="/" className="brand-mark" aria-label="Creative It Studio home">
-      <span className="brand-symbol">
+      {/* <span className="brand-symbol">
         <span />
         <span />
         <span />
-      </span>
+      </span> */}
       <span className="brand-wordmark">
-        Creative <b>It</b> Studio{compact ? "" : <small>Digital agency</small>}
+        <Image src={'/creative_it_studio.png'} height={50} width={100}  alt="logo" />
+        {/* Creative <b>It</b> Studio{compact ? "" : <small>Digital agency</small>} */}
       </span>
     </Link>
   );
@@ -114,7 +116,7 @@ export function SiteShell({
         />
       </Head>
       <header
-        className={`site-header ${scrolled ? "site-header-scrolled" : ""}`}
+        className={`site-header p-2 ${scrolled ? "site-header-scrolled" : ""}`}
       >
         <div className="container nav-wrap">
           <Logo />
@@ -171,13 +173,13 @@ export function SiteShell({
               sharper, work smarter, and grow with confidence.
             </p>
             <div className="social-row">
-              <a href="https://facebook.com" aria-label="Facebook">
+              <a href="https://www.facebook.com/creativeitstudio1/" aria-label="Facebook">
                 <Globe2 size={17} />
               </a>
-              <a href="https://instagram.com" aria-label="Instagram">
+              {/* <a href="https://instagram.com" aria-label="Instagram">
                 <Sparkles size={17} />
-              </a>
-              <a href="mailto:[ADD BUSINESS EMAIL]" aria-label="Email">
+              </a> */}
+              <a href="mailto:iftekhermahmud1@gmail.com" aria-label="Email">
                 <Mail size={17} />
               </a>
             </div>
@@ -192,17 +194,17 @@ export function SiteShell({
           <div className="footer-column">
             <h4>Services</h4>
             <Link href="/services/web-development">Web Development</Link>
-            <Link href="/services/graphic-design-branding">Graphic Design</Link>
+            {/* <Link href="/services/graphic-design-branding">Graphic Design</Link> */}
             <Link href="/services/video-editing">Video Editing</Link>
             <Link href="/services/digital-solutions">Digital Solutions</Link>
           </div>
           <div className="footer-column footer-contact">
             <h4>Start a conversation</h4>
             <p>
-              <MessageCircle size={15} /> [ADD WHATSAPP NUMBER]
+              <MessageCircle size={15} /> 01580359517
             </p>
             <p>
-              <Mail size={15} /> [ADD BUSINESS EMAIL]
+              <Mail size={15} /> iftekhermahmud1@gmail.com
             </p>
             <ButtonLink href="/contact" variant="ghost">
               Tell us about your idea
